@@ -18,6 +18,8 @@ Compatible Apps
 
 - `Reeder <http://reederapp.com/>`_ (iOS/Mac OS)
 - `Unread <https://www.goldenhillsoftware.com/unread/>`_ (iOS)
+- `Readably <https://play.google.com/store/apps/details?id=com.isaiasmatewos.readably>`_ (Android)
+
 
 .. note::
     - Saving an entry will add a new bookmark and save the article
