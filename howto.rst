@@ -111,6 +111,27 @@ This example assumes that you are running the Miniflux daemon on ``127.0.0.1:808
 Now you can access your Miniflux instance at `http://example.org/rss/`.
 In this configuration, cookies are using the path `/rss`.
 
+
+Apache 2.4 example:
+
+This configuration assumes the same base-url as the nginx-example.
+Place this inside your vhosts config, needed modules: mod_proxy, mod_proxy_http
+
+.. code:: bash
+
+    ProxyRequests Off
+    <Proxy *>
+        Order allow,deny
+        Allow from all
+    </Proxy>
+
+    <Location "/rss/">
+        ProxyPreserveHost On
+        ProxyPass http://127.0.0.1:8080/rss/
+        ProxyPassReverse http://127.0.0.1:8080/rss/
+    </Location>
+
+
 Reverse-Proxy with a Unix socket
 --------------------------------
 
