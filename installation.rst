@@ -17,6 +17,8 @@ Packages
 +----------------+---------------------+--------------------------------------------------------------------------+
 | FreeBSD Port   |  Community (Source) |  `www/miniflux <https://svnweb.freebsd.org/ports/head/www/miniflux/>`_   |
 +----------------+---------------------+--------------------------------------------------------------------------+
+| Nix            |  Community (Source) |  `<https://github.com/NixOS/nixpkgs/tree/master/pkgs/servers/miniflux>`_ |
++----------------+---------------------+--------------------------------------------------------------------------+
 
 You can download precompiled binaries and packages on the releases page: `<https://github.com/miniflux/miniflux/releases>`_.
 You could also :ref:`build the application from the source code <build-sources>`.
