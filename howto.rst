@@ -111,7 +111,6 @@ This example assumes that you are running the Miniflux daemon on ``127.0.0.1:808
 Now you can access your Miniflux instance at `http://example.org/rss/`.
 In this configuration, cookies are using the path `/rss`.
 
-
 Apache 2.4 example:
 
 This configuration assumes the same base-url as the nginx-example.
@@ -312,3 +311,27 @@ Now from the settings page, you can link your existing user to your Google accou
 
 If you would like to authorize anyone to create a user account, you must set ``OAUTH2_USER_CREATION=1``.
 Since Google do not have the concept of username, the email address is used as username.
+
+Build Docker Image
+------------------
+
+Miniflux supports 3 different architectures for Docker containers: ``amd64``, ``arm32v6``, and ``arm64v8``.
+There is one image for each architecture and a manifest.
+
+Here an example to build your own image:
+
+.. code:: bash
+
+    make docker-images DOCKER_IMAGE=your-namespace/miniflux
+
+To override the build version:
+
+.. code:: bash
+
+    make docker-images DOCKER_IMAGE=your-namespace/miniflux VERSION=42
+
+To create the manifest and push the images:
+
+.. code:: bash
+
+    make docker-manifest DOCKER_IMAGE=your-namespace/miniflux

@@ -11,8 +11,6 @@ Packages
 +----------------+---------------------+--------------------------------------------------------------------------+
 | RHEL/Fedora    |  Upstream (Binary)  |  `<https://github.com/miniflux/package-rpm>`_                            |
 +----------------+---------------------+--------------------------------------------------------------------------+
-| Docker Image   |  Upstream (Binary)  |  `<https://github.com/miniflux/docker>`_                                 |
-+----------------+---------------------+--------------------------------------------------------------------------+
 | Arch Linux     |  Community (Source) |  `<https://aur.archlinux.org/packages/miniflux/>`_                       |
 +----------------+---------------------+--------------------------------------------------------------------------+
 | FreeBSD Port   |  Community (Source) |  `www/miniflux <https://svnweb.freebsd.org/ports/head/www/miniflux/>`_   |
@@ -72,7 +70,7 @@ You must restart the service to take the new values into consideration.
 Docker Usage
 ------------
 
-Pull the image and run the container: :code:`docker run -d -p 80:8080 miniflux/miniflux:version` (Replace version).
+Pull the image and run the container: :code:`docker run -d -p 80:8080 miniflux/miniflux:latest`.
 You will probably need to pass some environment variables like the :code:`DATABASE_URL`.
 
 You could also use Docker Compose. Here an example of :code:`docker-compose.yml` file:
@@ -105,9 +103,9 @@ Remember that you still need to run the database migrations and create the first
 .. code:: bash
 
     # Run database migrations
-    docker exec -ti <container-name> /usr/local/bin/miniflux -migrate
+    docker exec -ti <container-name> /usr/bin/miniflux -migrate
 
     # Create the first user
-    docker exec -ti <container-name> /usr/local/bin/miniflux -create-admin
+    docker exec -ti <container-name> /usr/bin/miniflux -create-admin
 
 Another way of doing the same thing is to populate the variables ``RUN_MIGRATIONS``, ``CREATE_ADMIN``, ``ADMIN_USERNAME`` and ``ADMIN_PASSWORD``.
